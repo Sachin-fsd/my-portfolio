@@ -32,6 +32,8 @@ import {
   firstTestimonial,
   secondTestimonial,
   thirdTestimonial,
+  expressjs,
+  shadui
 } from '../assets'
 
 
@@ -115,7 +117,7 @@ const technologies = [
   },
   {
     name: "Shad Ui",
-    icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAAB6CAYAAABwWUfkAAAAAXNSR0IArs4c6QAAA/dJREFUeF7t3I2R0zAQhmFdJ1AJRydQCVDJQSVAJVAKWRKTkEvin9XKK32vZjKXuSS2dh+vbSW2ngpNIgNPElESZAFaZCMAGmiRDIiESUUDLZIBkTCpaKBFMiASJhUNtEgGRMKkooEWyYBImFQ00CIZEAmTim4L/VxKsce7UsrvUsrPUsrXFl0AukWWS3lTSnk5IV+v0cDfn+DDegN0WGr/LdiQf82sJhwb6FjoJchTD36cKjukR0CHpPXvQtcgT72wXbiBV29AV0/pZmT7INAxHiFL3VLJU0c+Rp2FU9F1rT3I1pO3UWffQNeD9iJbT8I8whZcL39dLKkGctjxOXQL6oKnTidrIIcOrYD2Q3eBDLQPuhtkoLdDd4UM9Dbo7pCBXg/dJTLQ66C7RQZ6OXTXyEAvg+4eGeh56CGQgX4MPQwy0Pehh0IG+jb0cMhAv4YeEhno/6GHRQb6DD00MtBH6OGRgRZBVoeWqOTp6KR6zZgUsmpFyyErQksiq0HLIitBSyOrQMsjK0CDfBpfjTy8Avniu/xRoUG++mVuRGiQb/zOPho0yHeumhkJGuQH18CNAg3yzBWtI0CPgmxxfDjNKmjP7Z7pajML9g49CvLnUsqnO0X55fB/e93VeoYeBfn7nakjL2HdMyL0Cq2EPIG7pqbqEVoR2bBdVd0btCqyQdvEsDYP2abWE7QysvvSr16gQRbYdYN8rGfXMCt7RYN8RHYdn7NfeADy+bTLPX1k1ooGuSJy1ooGuTJyRmiQA5CzQYMchJwJGuRA5CzQIAcjZ4AGuQHy3tAgN0LeExrkhsh7QYPcGHkPaJB3QG4NDfJOyC2hQd4RuRU0yDsjt4AGOQFyNDTISZAjoUFOhBwFDXIy5AhokBMi14YGOSlyTWiQEyPXggY5OXIt6CW3fZ5T8fqZ6+axRwte8Zo3BluV+5LcFf1d/Vbv5b52h/7L6rWePwCyI3lrPuqFfnSn/lw/QJ7LUMXXvdBWzVbVaxvIazPmfL8XektFg+xE2/JxL/TzYRYdO5FZ2kBemqnK7/NC29DKdt8GPtdAnstQ4OteaOvaknF0BuQth5nr1KceQj3aTmpAT9i3Ktvu6/12eIN7niznxr5kY5xbRbfIFlgt6ClJllDbjdtfq2J7ZGhbRwdT37tGjoDOgHqrDx7o7pGVoLd+xTkEshL0lhOxYZCVoNeO94dCVoK2WJcep4dDVoOe+3LHhoI2sWqWkULVE9vaw6uqnQtYmGFPk59P3+ZlGesHhHtepBr0ZTIN3ZAlmjK0BPAUJNAi3EADLZIBkTCpaKBFMiASJhUNtEgGRMKkooEWyYBImFQ00CIZEAmTigZaJAMiYf4BBkYUikLZqf0AAAAASUVORK5CYII=",
+    icon: shadui,
   },
   {
     name: "Node JS",
@@ -123,7 +125,7 @@ const technologies = [
   },
   {
     name: "Express Js",
-    icon: express,
+    icon: expressjs,
   },
   {
     name: "AWS",
@@ -194,7 +196,7 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Huzaif proved me wrong.",
+      "I thought it was impossible to make a website as beautiful as our product, but Sachin proved me wrong.",
     name: "MD Mustaqeem",
     designation: "Ecommerce",
     company: "QuickMart",
@@ -202,7 +204,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Huzaif does.",
+      "I've never met a web developer who truly cares about their clients' success like Sachin does.",
     name: "Abdul Raheman",
     designation: "Ecommerce Business",
     company: "justbuyz",
@@ -210,7 +212,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "After Huzaif optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      "After Sachin optimized our website, our traffic increased by 50%. We can't thank them enough!",
     name: "James Wang",
     designation: "CTO",
     company: "456 Enterprises",

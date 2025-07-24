@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -13,6 +15,7 @@ const Contact = () => {
     name: "",
     email: "",
     message: "",
+    time: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -36,18 +39,19 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
-          to_name: "Sachin Singh",
-          from_email: form.email,
-          to_email: "sachineducational555@gmail.com",
+          name: form.name,
+          // to_name: "Sachin Singh",
+          email: form.email,
+          // to_email: "sachineducational555@gmail.com",
           message: form.message,
+          time: new Date().toLocaleString(),
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          toast.success("Thank you. I will get back to you as soon as possible.");
 
           setForm({
             name: "",
@@ -59,7 +63,7 @@ const Contact = () => {
           setLoading(false);
           console.error(error);
 
-          alert("Ahh, something went wrong. Please try again.");
+          toast.error("Ahh, something went wrong. Please try again.");
         }
       );
   };
@@ -68,9 +72,10 @@ const Contact = () => {
     <div
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-6 sm:gap-10 overflow-hidden`}
     >
-      <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-4 sm:p-6 lg:p-8 rounded-2xl'
+      <ToastContainer position="top-right" autoClose={3000} className={"mt-16"}/>
+      <div
+        // variants={slideIn("left", "tween", 0.2, 1)}
+        className='contact-slide-in flex-[0.75] bg-black-100 p-4 sm:p-6 lg:p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
@@ -121,14 +126,14 @@ const Contact = () => {
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+      <div
+        // variants={slideIn("right", "tween", 0.2, 1)}
+        className='contact-slide-in-right xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
         <EarthCanvas />
-      </motion.div>
+      </div>
     </div>
   );
 };
