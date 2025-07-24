@@ -31,11 +31,7 @@ const GithubStats = () => (
             <h2 className={`${styles.sectionHeadText} text-center`}>My GitHub Stats</h2>
         </div>
         <div className="flex flex-col items-center mb-6 sm:mb-8">
-            <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true }}
+            <div
                 className="flex flex-col items-center"
             >
                 <img
@@ -54,17 +50,13 @@ const GithubStats = () => (
                     </a>
                 </h3>
                 <p className="text-secondary text-[14px] sm:text-[16px] text-center px-4">Full Stack Developer | Open Source Enthusiast</p>
-            </motion.div>
+            </div>
         </div>
         <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 sm:gap-6 lg:gap-8 w-full max-w-6xl mx-auto">
             {statCards.map((card, idx) => (
-                <motion.div
+                <div
                     key={card.alt}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.1 * idx }}
-                    viewport={{ once: true }}
-                    className="bg-tertiary rounded-2xl shadow-card p-4 sm:p-6 lg:p-8 flex flex-col items-center w-full lg:w-1/3 min-h-[350px] sm:min-h-[400px]"
+                    className="blocks bg-tertiary rounded-2xl shadow-card p-4 sm:p-6 lg:p-8 flex flex-col items-center w-full lg:w-1/3 min-h-[350px] sm:min-h-[400px]"
                 >
                     <span className="text-white font-semibold mb-3 sm:mb-4 text-lg sm:text-xl text-center">{card.title}</span>
                     <div className="flex-1 w-full flex items-center justify-center">
@@ -75,7 +67,7 @@ const GithubStats = () => (
                             loading="lazy"
                         />
                     </div>
-                </motion.div>
+                </div>
             ))}
         </div>
     </section>

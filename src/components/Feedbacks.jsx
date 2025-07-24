@@ -13,34 +13,34 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
   // Use a `ref` to apply GSAP animations
   const cardRef = React.useRef(null);
 
-  useEffect(() => {
-    const el = cardRef.current;
+  // useEffect(() => {
+  //   const el = cardRef.current;
 
-    // Add the ScrollTrigger animation with GSAP
-    gsap.fromTo(
-      el,
-      {
-        opacity: 0,
-        y: 100, // Initial position off-screen
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: el,
-          start: "top bottom", // Trigger when the top of the element reaches the bottom of the viewport
-          end: "top center",   // End the animation when the top reaches the center
-          scrub: true,         // Link the animation progress to the scroll position
-          markers: false,      // Set to true if you want to see the markers for debugging
-        },
-      }
-    );
-  }, []);
+  //   // Add the ScrollTrigger animation with GSAP
+  //   gsap.fromTo(
+  //     el,
+  //     {
+  //       opacity: 0,
+  //       y: 100, // Initial position off-screen
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       scrollTrigger: {
+  //         trigger: el,
+  //         start: "top bottom", // Trigger when the top of the element reaches the bottom of the viewport
+  //         end: "top center",   // End the animation when the top reaches the center
+  //         scrub: true,         // Link the animation progress to the scroll position
+  //         markers: false,      // Set to true if you want to see the markers for debugging
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div
       ref={cardRef}
-      className="bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full"
+      className="blocks bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full"
     >
       <p className="text-white font-black text-[48px]">"</p>
 

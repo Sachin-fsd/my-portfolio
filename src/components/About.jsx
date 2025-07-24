@@ -7,37 +7,37 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const useGsap = (elementRef, animation, delay = 0) => {
-  useEffect(() => {
-    if (elementRef.current) {
-      gsap.fromTo(
-        elementRef.current,
-        animation.from,
-        {
-          ...animation.to,
-          delay,
-          scrollTrigger: {
-            trigger: elementRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
-  }, [elementRef, animation, delay]);
-};
+// const useGsap = (elementRef, animation, delay = 0) => {
+//   useEffect(() => {
+//     if (elementRef.current) {
+//       gsap.fromTo(
+//         elementRef.current,
+//         animation.from,
+//         {
+//           ...animation.to,
+//           delay,
+//           scrollTrigger: {
+//             trigger: elementRef.current,
+//             start: "top 85%",
+//             toggleActions: "play none none reverse",
+//           },
+//         }
+//       );
+//     }
+//   }, [elementRef, animation, delay]);
+// };
 
 const ServiceCard = ({ index, title, icon }) => {
   const cardRef = useRef(null);
-  useGsap(cardRef, {
-    from: { opacity: 0, y: 100, scale: 0.8 },
-    to: { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" },
-  }, index * 0.2);
+  // useGsap(cardRef, {
+  //   from: { opacity: 0, y: 100, scale: 0.8 },
+  //   to: { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power3.out" },
+  // }, index * 0.2);
 
   return (
-    <Tilt className="xs:w-[250px] w-full">
+    <Tilt className="blocks xs:w-[250px] w-full">
       <div ref={cardRef} className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
         <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
           <img src={icon} alt="web-development" className="w-16 h-16 object-contain" />
@@ -52,17 +52,17 @@ const About = () => {
   const headingRef = useRef(null);
   const paragraphRef = useRef(null);
 
-  // Heading Animation
-  useGsap(headingRef, {
-    from: { opacity: 0, x: -50 },
-    to: { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
-  });
+  // // Heading Animation
+  // useGsap(headingRef, {
+  //   from: { opacity: 0, x: -50 },
+  //   to: { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+  // });
 
-  // Paragraph Animation
-  useGsap(paragraphRef, {
-    from: { opacity: 0, y: 50 },
-    to: { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" },
-  }, 0.3);
+  // // Paragraph Animation
+  // useGsap(paragraphRef, {
+  //   from: { opacity: 0, y: 50 },
+  //   to: { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" },
+  // }, 0.3);
 
   return (
     <div>

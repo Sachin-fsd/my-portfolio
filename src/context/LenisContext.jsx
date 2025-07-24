@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis';
 
 const LenisContext = createContext();
@@ -8,6 +9,24 @@ export const useLenisContext = () => {
   return context; // Allow null/undefined values initially
 };
 
+export function useGsapLenisSync() {
+  const lenis = useLenisContext();
+
+  useEffect(() => {
+    if (!lenis) return;
+
+    function updateScrollTrigger() {
+      ScrollTrigger.update();
+    }
+
+    lenis.on("scroll", updateScrollTrigger);
+
+    return () => {
+      lenis.off("scroll", updateScrollTrigger);
+    };
+  }, [lenis]);
+}
+
 export const LenisProvider = ({ children }) => {
   const lenisRef = useRef(null);
   const [lenisInstance, setLenisInstance] = useState(null);
@@ -15,7 +34,7 @@ export const LenisProvider = ({ children }) => {
   useEffect(() => {
     // Initialize Lenis
     lenisRef.current = new Lenis({
-      duration: 1.2,
+      duration: 1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',

@@ -9,7 +9,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 
 // Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const ProjectCard = ({
   index,
@@ -22,29 +22,29 @@ const ProjectCard = ({
 }) => {
   const cardRef = useRef(null);
 
-  useEffect(() => {
-    const el = cardRef.current;
+  // useEffect(() => {
+  //   const el = cardRef.current;
 
     // ScrollTrigger for animating project cards with stagger
-    gsap.fromTo(
-      el,
-      {
-        opacity: 0,
-        y: 100, // Start off-screen
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: el,
-          start: "top bottom",  // Trigger when the top of the element hits the bottom of the viewport
-          end: "top center",    // End when the top reaches the center of the viewport
-          scrub: true,          // Smoothly sync scroll and animation
-          markers: false,       // Set to `true` to see debug markers
-        },
-      }
-    );
-  }, []);
+  //   gsap.fromTo(
+  //     el,
+  //     {
+  //       opacity: 0,
+  //       y: 100, // Start off-screen
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       scrollTrigger: {
+  //         trigger: el,
+  //         start: "top bottom",  // Trigger when the top of the element hits the bottom of the viewport
+  //         end: "top center",    // End when the top reaches the center of the viewport
+  //         scrub: true,          // Smoothly sync scroll and animation
+  //         markers: false,       // Set to `true` to see debug markers
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div ref={cardRef}>
@@ -54,7 +54,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-4 sm:p-5 rounded-2xl w-full max-w-[360px] mx-auto"
+        className="blocks bg-tertiary p-4 sm:p-5 rounded-2xl w-full max-w-[360px] mx-auto"
       >
         <div className="relative w-full h-[180px] sm:h-[230px] cursor-pointer"
           onClick={() => window.open(site_link, "_blank")}
@@ -100,28 +100,28 @@ const ProjectCard = ({
 };
 
 const Works = () => {
-  useEffect(() => {
-    // Stagger effect for project cards
-    gsap.fromTo(
-      ".project-card", // Select all project cards
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.1, // Stagger delay of 0.3 seconds between each card
-        scrollTrigger: {
-          trigger: ".works-container",
-          start: "top bottom",  // Trigger when the top of the container reaches the bottom
-          end: "top center",
-          scrub: true,
-          markers: false, // Set to true to see debug markers
-        },
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   // Stagger effect for project cards
+  //   gsap.fromTo(
+  //     ".project-card", // Select all project cards
+  //     {
+  //       opacity: 0,
+  //       y: 100,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       stagger: 0.1, // Stagger delay of 0.3 seconds between each card
+  //       scrollTrigger: {
+  //         trigger: ".works-container",
+  //         start: "top bottom",  // Trigger when the top of the container reaches the bottom
+  //         end: "top center",
+  //         scrub: true,
+  //         markers: false, // Set to true to see debug markers
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   return (
     <>
