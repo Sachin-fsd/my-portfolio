@@ -26,7 +26,7 @@ const Hero = () => {
             I develop modern, user-friendly<br className="hidden sm:block" />
             <span className="block sm:inline"> interfaces and web applications</span>
           </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center text-lg sm:text-xl lg:text-2xl mt-4">
+          <div className="flex items-start sm:items-center text-lg sm:text-xl lg:text-2xl mt-4">
             <p className="text-white-100 mb-2 sm:mb-0">I 💖 </p>
             <RotatingText
               texts={['Coding', 'Designing', 'DSA', 'Thinking', 'Problem Solving']}
